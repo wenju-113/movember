@@ -1,0 +1,41 @@
+%%writefile password.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>密碼輸入</title>
+</head>
+<body>
+<h2>請輸入密碼以進入網站</h2>
+<input type="password" id="pwd" placeholder="密碼">
+<button onclick="checkPassword()">進入</button>
+<p id="error" style="color:red;"></p>
+<script>
+    function checkPassword() {
+        // 您的密碼
+        const correctPwd = "m365"; 
+        // 目標 OpenLab 網站的完整 URL
+        const targetUrl = "https://ooopenlab.cc/quiz/ofnoD05qa8YBPaCW9ZUy";
+
+        const inputPwd = document.getElementById("pwd").value;
+
+        if (inputPwd === correctPwd) {
+            // **【核心修改】**: 將網址替換為可點擊的超連結
+            document.body.innerHTML = '<h1>密碼正確！請點擊<br><a href="' + targetUrl + '" target="_top">前往扭蛋機抽獎</a></h1>'; 
+            
+            // **備註**: target="_top" 會強制在主視窗開啟連結，增加可靠性。
+            
+            // 執行自動跳轉指令（通常用於沒有點擊的情況）
+            setTimeout(function() {
+                 window.top.location.href = targetUrl; 
+            }, 50); 
+
+        } else {
+            document.getElementById("error").textContent = "密碼錯誤，請重試";
+        }
+    }
+</script>
+</body>
+</html>
+
+//Initial commit of login page
