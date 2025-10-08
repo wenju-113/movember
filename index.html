@@ -6,14 +6,14 @@
 <title>密碼輸入</title>
 </head>
 <body>
-<h2>請輸入密碼以進入網站</h2>
+<h2>請輸入密碼以進入扭蛋抽獎頁面</h2>
 <input type="password" id="pwd" placeholder="密碼">
 <button onclick="checkPassword()">進入</button>
 <p id="error" style="color:red;"></p>
 <script>
     function checkPassword() {
         // 您的密碼
-        const correctPwd = "m365"; 
+        const correctPwd = "movembet"; 
         // 目標 OpenLab 網站的完整 URL
         const targetUrl = "https://ooopenlab.cc/quiz/ofnoD05qa8YBPaCW9ZUy";
 
@@ -31,7 +31,7 @@
             }, 50); 
 
         } else {
-            document.getElementById("error").textContent = "密碼錯誤，請重試";
+            document.getElementById("error").textContent = "密碼錯誤，再去仔細找找漫畫中的線索吧!";
         }
     }
 </script>
